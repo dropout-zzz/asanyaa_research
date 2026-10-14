@@ -5,6 +5,7 @@
 enum Opcode : u32 {
   Dialogue = 0x01,
   PlayMovie = 0x0f,
+  Control = 0x14,
   Wait = 0x1d,
   SetFlag = 0x21,
   ConditionalFarJump = 0x22,
@@ -58,6 +59,12 @@ struct InstInfo {
   } else if (opcode == Opcode::PlayMovie) {
     s32 unk1[6];
     u32 movieID;
+  } else if(opcode == Opcode::Control) {
+    s32 unk1[3];
+    s32 arg2;
+    s32 arg1;
+    s32 unk2;
+    u32 what;
   } else {
     s32 unk1[7];
   }
