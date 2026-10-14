@@ -63,15 +63,15 @@ struct InstInfo {
   } else if (opcode == Opcode::PlayMovie) {
     s32 unk1[6];
     u32 movieID;
-  } else if(opcode == Opcode::Control) {
+  } else if (opcode == Opcode::Control) {
     s32 unk1[3];
     s32 arg2;
     s32 arg1;
     s32 unk2;
     u32 what;
-  } else if(opcode == Opcode::PlaySfx
-            || opcode == Opcode::PlaySfxFadeOut
-            || opcode == Opcode::PlaySfxLoop) {
+  } else if (opcode == Opcode::PlaySfx
+             || opcode == Opcode::PlaySfxFadeOut
+             || opcode == Opcode::PlaySfxLoop) {
     s32 unk1[6];
     u32 soundEffectID;
   } else {
