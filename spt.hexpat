@@ -20,6 +20,7 @@ enum Opcode : u32 {
   ConditionalNearJump = 0x23,
   JumpLabelDummy = 0x26,
   CompareFlagEquals = 0x28,
+  ChangeFaceCg = 0x2a,
 };
 
 fn line_no(u32 value) {
@@ -84,6 +85,9 @@ struct InstInfo {
              || opcode == Opcode::PlayBgm) {
     s32 unk1[6];
     u32 backgroundMusicID;
+  } else if (opcode == Opcode::ChangeFaceCg) {
+    s32 unk1[6];
+    s32 cgIndex;
   } else {
     s32 unk1[7];
   }
