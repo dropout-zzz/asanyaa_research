@@ -6,6 +6,7 @@ enum Opcode : u32 {
   Dialogue = 0x01,
   PlayMovie = 0x0f,
   Control = 0x14,
+  WhiteOut = 0x18,
   Wait = 0x1d,
   SetFlag = 0x21,
   ConditionalFarJump = 0x22,
