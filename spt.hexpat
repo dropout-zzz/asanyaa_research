@@ -4,6 +4,10 @@
 
 enum Opcode : u32 {
   Dialogue = 0x01,
+  PlayBgm = 0x06,
+  FadeInBgm = 0x07,
+  FadeOutBgm = 0x08,
+  StopBgm = 0x09,
   PlaySfx = 0x0a,
   PlaySfxLoop = 0x0b,
   PlaySfxFadeOut = 0x0d,
@@ -74,6 +78,12 @@ struct InstInfo {
              || opcode == Opcode::PlaySfxLoop) {
     s32 unk1[6];
     u32 soundEffectID;
+  } else if (opcode == Opcode::FadeInBgm
+             || opcode == Opcode::FadeOutBgm
+             || opcode == Opcode::StopBgm
+             || opcode == Opcode::PlayBgm) {
+    s32 unk1[6];
+    u32 backgroundMusicID;
   } else {
     s32 unk1[7];
   }
