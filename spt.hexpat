@@ -67,7 +67,9 @@ struct InstInfo {
     u32 expectedValue;
     s32 unk2[2];
   } else if (opcode == Opcode::PlayMovie) {
-    s32 unk1[6];
+    s32 unk1[2];
+    u32 flags;
+    s32 unk2[3];
     u32 movieID;
   } else if (opcode == Opcode::Control) {
     s32 unk1[3];
