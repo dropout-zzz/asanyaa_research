@@ -18,6 +18,7 @@ enum Opcode : u32 {
   SetFlag = 0x21,
   ConditionalFarJump = 0x22,
   ConditionalNearJump = 0x23,
+  SkipToNextScript = 0x24,
   JumpLabelDummy = 0x26,
   CompareFlagEquals = 0x28,
   ChangeFaceCg = 0x2a,
