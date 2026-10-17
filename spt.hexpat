@@ -12,6 +12,7 @@ enum Opcode : u32 {
   PlaySfxLoop = 0x0b,
   FadeOutSfx = 0x0d,
   PlayMovie = 0x0f,
+  SwitchBackground = 0x13,
   Control = 0x14,
   WhiteOut = 0x18,
   Wait = 0x1d,
@@ -91,6 +92,11 @@ struct InstInfo {
   } else if (opcode == Opcode::ChangeFaceCg) {
     s32 unk1[6];
     s32 cgIndex;
+  } else if (opcode == Opcode::SwitchBackground) {
+    s32 unk1[4];
+    u32 cgIndex;
+    s32 unk2;
+    u32 transitionEffectID;
   } else {
     s32 unk1[7];
   }
