@@ -10,7 +10,7 @@ enum Opcode : u32 {
   StopBgm = 0x09,
   PlaySfx = 0x0a,
   PlaySfxLoop = 0x0b,
-  PlaySfxFadeOut = 0x0d,
+  FadeOutSfx = 0x0d,
   PlayMovie = 0x0f,
   Control = 0x14,
   WhiteOut = 0x18,
@@ -75,7 +75,7 @@ struct InstInfo {
     s32 unk2;
     u32 what;
   } else if (opcode == Opcode::PlaySfx
-             || opcode == Opcode::PlaySfxFadeOut
+             || opcode == Opcode::FadeOutSfx
              || opcode == Opcode::PlaySfxLoop) {
     s32 unk1[6];
     u32 soundEffectID;
